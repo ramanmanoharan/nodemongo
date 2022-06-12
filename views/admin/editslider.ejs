@@ -1,0 +1,80 @@
+<%- include('layouts/header') %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="d-flex align-items-center">
+			<div class="mr-auto">
+					<h3 class="page-title">Edit Slider</h3>
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Slider</li>
+								<li class="breadcrumb-item active" aria-current="page">Edit Slider</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>	  
+
+		<!-- Main content -->
+		<section class="content">
+
+		 <!-- Basic Forms -->
+		  <div class="box">
+			<div class="box-header with-border">
+			  <h4 class="box-title">Edit SLIDER</h4>
+			  <h6 class="box-subtitle">Edit  <a class="text-warning" href="#">Slider </a></h6>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+			  <div class="row">
+				<div class="col">
+				
+					<form novalidate method="post" action="/admin/updateslider/<%= slider._id%>" enctype='multipart/form-data' >
+					  <div class="row">
+						<div class="col-12">						
+							<div class="form-group">
+								<h5>Slider Title <span class="text-danger">*</span></h5>
+								<div class="controls">
+									<input type="text" name="slidertitle" value="<%= slider.slidertitle %>" class="form-control" required data-validation-required-message="This field is required" > </div>
+								<div class="form-control-feedback"><small>Add <code>required</code> attribute to field for required validation.</small></div>
+							</div>
+							<div class="form-group">
+								<h5>Slider Description <span class="text-danger">*</span></h5>
+								<div class="controls">
+									<textarea name="sliderdesc" id="textarea" class="form-control" required placeholder="Slider Description"><%= slider.sliderdesc %></textarea>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<h5>Slider Image <span class="text-danger">*</span></h5>
+								<div class="controls">
+									<input type="file" value="<%= slider.sliderfile %>" name="sliderfile" class="form-control"> </div>
+									<img style="width: 100px;height:auto" src="/files/<%= slider.sliderfile%>">
+							</div>
+							
+						<div class="text-xs-right">
+							<button type="submit" class="btn btn-rounded btn-info">Submit</button>
+						</div>
+					</form>
+
+				</div>
+				<!-- /.col -->
+			  </div>
+			  <!-- /.row -->
+			</div>
+			<!-- /.box-body -->
+		  </div>
+		  <!-- /.box -->
+
+		</section>
+		<!-- /.content -->
+	  </div>
+  </div>
+  <!-- /.content-wrapper -->
+  <%- include('layouts/footer') %>

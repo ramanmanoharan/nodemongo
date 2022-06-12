@@ -1,0 +1,28 @@
+<%- include('frontend/layouts/header1') %>
+<header class="video-bg">
+  <video autoplay loop muted class="visible-md visible-lg overlay-video">
+    <source src="videos/video.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <nav class="navbar navbar-default navbar-header" role="navigation"> <a href="index-2.html"><img src="images/logo.png" alt="Image" class="logo"></a>
+            <button type="button" class="navbar-toggle toggle-menu menu-right push-body" data-toggle="collapse"> <i class="ion-navicon"></i> </button>
+          </nav>
+          <!-- end nav -->
+          <div class="video-bg-content text-center">
+            <h1 class="error">404</h1>
+            <h5>OOPS! <%= title %></h5>
+          </div>
+        </div>
+        <!-- end col-12 --> 
+      </div>
+      <!-- end row --> 
+    </div>
+    <!-- end container --> 
+  </div>
+  <!-- end wrap --> 
+</header>
+<!-- end header -->
+<%- include('frontend/layouts/footer') %>

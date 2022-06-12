@@ -1,0 +1,73 @@
+<%- include('layouts/header') %>
+<div class="content-wrapper">
+    <div class="container-full">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="d-flex align-items-center">
+        <div class="mr-auto">
+          <h3 class="page-title">Slider View</h3>
+          <div class="d-inline-block align-items-center">
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+                <li class="breadcrumb-item" aria-current="page">Slider View</li>
+                <li class="breadcrumb-item active" aria-current="page">View Slider</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<section class="content">
+      <div class="row">
+        
+      <div class="col-12">
+        <div class="box">
+          <div class="box-header">            
+            <h4 class="box-title">Slider List</h4>
+          </div>
+          <div class="box-body">
+            <div class="table-responsive">
+  <div class="box">
+        <div class="box-header with-border">
+
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <% if ( error.length ) { %>
+     <div class="alert alert-warning alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button> <%= error %>. </div>                   
+    
+<% } %>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
+            <thead>
+              <tr>
+              <th>S.No</th>
+                <th>Slider title</th>
+                <th>Slider Description</th>
+                <th>Slider Image</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+             <% var a= 1; for(var i=0; i<slider.length;i++) { %>
+            <tr>
+            <td><%= a %></td>
+              <td><%= slider[i].slidertitle%></a></td>
+              <td><%= slider[i].sliderdesc%></td>
+              <td><img style="width:100px;height:auto" src="/files/<%= slider[i].sliderfile%>"></td>
+              <td><%= slider[i].updated_at  %></td>
+              <td><a href="/admin/slideredit/<%= slider[i]._id %>"><i class="fa fa-pencil btn btn-info"></i></a></td>
+              <td><a href="/admin/sliderdelete/<%= slider[i]._id %>"><i class="fa fa-trash btn btn-danger"></i></a></td>
+
+            </tr>
+          <% a++ } %>
+           </tbody></table></div></div></div></div></div></div></div></div></section>
+</div></div>
+
+<%- include('layouts/footer') %>
